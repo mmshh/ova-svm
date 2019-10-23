@@ -35,10 +35,12 @@ class SVM:
         y : numpy array of shape (minibatch size, 10)
         returns : numpy array of shape (401, 10)
         """
-        reg = 1/2 * np.sum(np.sum(self.w * 2, axis=0))
-        losses = 2 * (1 - np.dot(x, self.w) * y)
-        losses[losses <= 0] = 0
-        return losses + reg
+        x_copy = x.copy()
+        losses = (1-np.dot(x_copy, self.w)*y)
+        max_losses = np.maximum(0, losses)
+        const_x = -2*self.C/y.shape[0]*np.transpose(x_copy)
+        return np.dot(const_x, max_losses*y) + self.w
+        
 
 
     # Batcher function
