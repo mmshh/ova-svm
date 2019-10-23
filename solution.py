@@ -1,16 +1,5 @@
 import numpy as np
 from numpy import linalg
-# from sklearn import svm
-# from sklearn.metrics import hinge_loss
-#
-# X = np.array([[0], [1], [2], [3]])
-# Y = np.array([0, 1, 2, 3])
-# labels = np.array([0, 1, 2, 3])
-# est = svm.LinearSVC()
-# est.fit(X, Y)
-# pred_decision = est.decision_function([[-1], [2], [3]])
-# y_true = [0, 2, 3]
-# hinge_loss(y_true, pred_decision, labels)
 
 
 class SVM:
